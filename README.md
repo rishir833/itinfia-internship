@@ -250,3 +250,52 @@ The OS Disk stores all files required for the operating system to function and b
   * Key Management controls how the OS disk is encrypted to protect the data stored on it. Azure supports Platform-managed keys, where Microsoft manages encryption automatically, and Customer-managed keys, where organizations control their own encryption keys for enhanced security and compliance.
 * **Enable Ultra Disk Compatibility**
   * Enable Ultra Disk Compatibility allows the Virtual Machine to attach Azure Ultra Disks, which provide very high IOPS, low latency, and configurable throughput. This option is typically enabled for performance-intensive applications such as large databases, SAP HANA, and enterprise workloads requiring high-speed storage.
+
+
+# Network interface
+
+## Virtual Network
+
+<img width="1002" height="70" alt="image" src="https://github.com/user-attachments/assets/399ded03-3b9a-4da4-8a0b-07df96ad9b76" />
+
+### What is it?
+
+A Virtual Network (VNet) is a logically isolated network in Azure that enables Azure resources, such as Virtual Machines, Storage Accounts, and Databases, to communicate securely with each other. It functions similarly to a traditional on-premises network but is hosted in the Azure cloud. A VNet can be divided into multiple subnets to organize and manage network traffic efficiently.
+
+### Why do we use it?
+
+A Virtual Network provides secure communication between Azure resources and allows controlled access to the internet, on-premises networks, and other Azure services. It also enables network isolation, improves security, and supports services such as Network Security Groups (NSGs), VPN Gateway, and Azure Load Balancer for efficient network management.
+
+
+## Subnet
+<img width="952" height="42" alt="image" src="https://github.com/user-attachments/assets/8d6b2af0-1b8f-483d-b699-835e1dd22f9e" />
+
+### What is it?
+
+A Subnet is a smaller network created within an Azure Virtual Network (VNet). It divides the VNet into multiple logical sections, allowing resources such as Virtual Machines, databases, and application servers to be grouped based on their function. Each subnet is assigned a specific range of IP addresses (CIDR block), such as 10.0.0.0/24.
+
+### Why do we use it?
+
+Subnets help organize and isolate network resources, making the network more secure and easier to manage. They enable administrators to apply different security rules, route traffic efficiently, and separate workloads such as web servers, application servers, and databases within the same Virtual Network.
+
+## NIC Network Security Group (NSG)
+<img width="496" height="117" alt="image" src="https://github.com/user-attachments/assets/a66b89ae-b9f1-49a7-a253-de64fe7518c7" />
+### What is it?
+
+A Network Security Group (NSG) is a security feature in Azure that controls inbound and outbound network traffic for a Virtual Machine's Network Interface Card (NIC). It acts as a virtual firewall by allowing or denying traffic based on defined security rules. During VM creation, Azure provides three NSG options: None, Basic, and Advanced.
+
+### Why do we use it?
+
+An NSG is used to protect Virtual Machines from unauthorized network access by controlling which traffic is allowed or blocked. It helps secure Azure resources, restrict unnecessary ports, and improve the overall network security of the environment.
+
+NSG Options
+None
+No Network Security Group is associated with the VM's network interface.
+The VM is not protected by NSG rules unless one is attached later.
+Basic
+Azure creates a new NSG with default inbound and outbound security rules.
+Suitable for most deployments and allows basic configuration during VM creation.
+Advanced
+Allows you to select an existing NSG or create a custom one.
+Recommended when you need specific security rules for production or enterprise environments.
+
