@@ -77,8 +77,12 @@ Zone Options define how the Availability Zone is assigned during Virtual Machine
 
 Zone Options help improve high availability by distributing workloads across different availability zones. They reduce the impact of data center failures and provide flexibility by allowing either manual or automatic zone selection during deployment.
 
-<img width="987" height="388" alt="image" src="https://github.com/user-attachments/assets/83a1caad-e4cc-45e8-bc69-79fe824cc4d1" />
+
 ## Availability Zone
+
+<img width="987" height="388" alt="image" src="https://github.com/user-attachments/assets/83a1caad-e4cc-45e8-bc69-79fe824cc4d1" />
+
+
 ### What is it?
 
 An Availability Zone is a physically separate data center within an Azure region, equipped with its own power, cooling, and networking infrastructure. Azure regions typically contain multiple availability zones to provide redundancy and fault isolation. When you deploy a Virtual Machine, you can choose the availability zone in which it will run. This ensures that workloads are distributed across independent data centers within the same region. Availability Zones are designed to provide high availability for critical applications.
@@ -221,3 +225,28 @@ The SSH Key Type is used to establish secure communication between the user and 
 
 
 The Key Pair Name is the name assigned to the SSH key pair that is used to authenticate and securely access the Virtual Machine. It helps identify and manage the SSH key within Azure. The key pair consists of a public key, which is stored on the VM, and a private key, which is downloaded and kept securely by the user. Using a meaningful key pair name makes it easier to identify the correct key when managing multiple Virtual Machines.
+
+
+## OS Disk
+
+<img width="1025" height="280" alt="image" src="https://github.com/user-attachments/assets/dd9cb906-fda0-41b1-aea7-7df53b66fe10" />
+
+### What is it?
+
+The Operating System (OS) Disk is the primary storage disk attached to a Virtual Machine that contains the operating system, boot files, and system applications required to start and run the VM. During VM creation, you can configure the OS disk size, disk type, key management, and whether the disk should be deleted along with the VM. Azure also provides options such as Premium SSD, Standard SSD, and Standard HDD to meet different performance and cost requirements. Proper OS disk configuration ensures optimal performance, security, and storage management.
+
+### Why do we use it?
+
+The OS Disk stores all files required for the operating system to function and boot successfully. Configuring the appropriate disk size and type improves VM performance, while features like encryption and key management enhance data security. Additional settings such as Delete with VM and Ultra Disk Compatibility provide better storage lifecycle management and flexibility based on workload requirements.
+
+### OS Disk Settings
+* **OS Disk Size**
+  * OS Disk Size specifies the amount of storage allocated to the operating system disk of the Virtual Machine. It determines how much space is available for the operating system, system files, updates, and installed applications. The size can be increased later if additional storage is required.
+* **OS Disk Type**
+  * OS Disk Type defines the storage performance and redundancy of the operating system disk. Azure offers options such as Standard HDD, Standard SSD, Premium SSD, Premium SSD v2, and Ultra Disk (for supported workloads), allowing users to choose the best balance between performance and cost.
+* **Delete with VM**
+  * Delete with VM determines whether the operating system disk is automatically deleted when the Virtual Machine is removed. Enabling this option helps avoid unused storage resources and unnecessary storage costs. If disabled, the disk remains available for backup or future use.
+* **Key Management**
+  * Key Management controls how the OS disk is encrypted to protect the data stored on it. Azure supports Platform-managed keys, where Microsoft manages encryption automatically, and Customer-managed keys, where organizations control their own encryption keys for enhanced security and compliance.
+* **Enable Ultra Disk Compatibility**
+  * Enable Ultra Disk Compatibility allows the Virtual Machine to attach Azure Ultra Disks, which provide very high IOPS, low latency, and configurable throughput. This option is typically enabled for performance-intensive applications such as large databases, SAP HANA, and enterprise workloads requiring high-speed storage.
