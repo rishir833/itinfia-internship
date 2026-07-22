@@ -342,6 +342,6 @@ Selecting the appropriate inbound ports ensures that only the required services 
   * Used to host websites over a secure, encrypted connection using SSL/TLS.
   * Recommended for production websites and web applications.
 *  **RDP (3389)**
-  * Used for remote desktop access to Windows Virtual Machines.
-  * Allows administrators to manage Windows VMs through the Remote Desktop Protocol (RDP).
+   * Used for remote desktop access to Windows Virtual Machines.
+   * Allows administrators to manage Windows VMs through the Remote Desktop Protocol (RDP).
 
