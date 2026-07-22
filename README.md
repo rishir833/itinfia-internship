@@ -60,6 +60,7 @@ An Azure Region is a geographical location where Azure resources are deployed an
 Selecting the appropriate region reduces network latency, improves application performance, meets compliance and data residency requirements, and supports disaster recovery planning.
 
 ## Availability Options
+
 ### What is it?
 
 Availability Options determine how Azure protects a Virtual Machine from hardware failures, planned maintenance, and unexpected outages. Azure offers options such as Availability Zones and Availability Sets to improve the reliability and availability of applications. These options distribute workloads across fault-tolerant infrastructure.
@@ -288,14 +289,59 @@ A Network Security Group (NSG) is a security feature in Azure that controls inbo
 
 An NSG is used to protect Virtual Machines from unauthorized network access by controlling which traffic is allowed or blocked. It helps secure Azure resources, restrict unnecessary ports, and improve the overall network security of the environment.
 
-NSG Options
-None
-No Network Security Group is associated with the VM's network interface.
-The VM is not protected by NSG rules unless one is attached later.
-Basic
-Azure creates a new NSG with default inbound and outbound security rules.
-Suitable for most deployments and allows basic configuration during VM creation.
-Advanced
-Allows you to select an existing NSG or create a custom one.
-Recommended when you need specific security rules for production or enterprise environments.
+### NSG Options
+* **None** 
+  * No Network Security Group is associated with the VM's network interface.
+  * The VM is not protected by NSG rules unless one is attached later.
+* **Basic**
+  * Azure creates a new NSG with default inbound and outbound security rules.
+  * Suitable for most deployments and allows basic configuration during VM creation.
+* **Advanced**
+  * Allows you to select an existing NSG or create a custom one.
+  * Recommended when you need specific security rules for production or enterprise environments.
+
+## Public Inbound Ports
+
+<img width="561" height="87" alt="image" src="https://github.com/user-attachments/assets/a1bf7ba2-5af2-49d9-ac94-762ecd5e56de" />
+
+### What is it?
+
+Public Inbound Ports determine whether the Virtual Machine can receive incoming network traffic from the internet. Azure allows you to either block all public inbound connections (None) or allow traffic through selected ports (Allow selected ports). These ports are protected and managed using Network Security Group (NSG) rules.
+
+### Why do we use it?
+
+Public Inbound Ports are used to provide remote access and allow external users or applications to connect to the Virtual Machine. Only the required ports should be opened to minimize security risks and protect the VM from unauthorized access.
+
+### Public Inbound Port Options
+* **None**
+  * Blocks all inbound traffic from the internet.
+  * Recommended for VMs that do not require direct public access or are accessed through VPN, Bastion, or private networks.
+* **Allow Selected Ports**
+  * Allows inbound traffic only through the ports selected during VM creation.
+  * Common examples include SSH (Port 22) for Linux VMs and RDP (Port 3389) for Windows VMs. It provides controlled access while maintaining network security.
+
+## Inbound Ports
+<img width="977" height="205" alt="image" src="https://github.com/user-attachments/assets/73526e92-139e-4c17-9f19-e08572a5c737" />
+
+### What is it?
+
+Select Inbound Ports allows you to choose which network ports should be open for incoming traffic to the Virtual Machine. These ports enable specific services, such as remote access or web hosting, to communicate with external users. Azure automatically creates the required Network Security Group (NSG) rules for the selected ports.
+
+### Why do we use it?
+
+Selecting the appropriate inbound ports ensures that only the required services are accessible from the internet. This improves security by limiting unnecessary network access while allowing users to connect to the Virtual Machine for administration or application access.
+
+### Common Inbound Ports
+* **SSH (22)**
+  * Used for secure remote access to Linux Virtual Machines.
+  * Allows administrators to manage the VM using SSH clients such as OpenSSH or PuTTY.
+* **HTTP (80)**
+  * Used to host and access websites over an unencrypted connection.
+  * Suitable for basic web applications and websites.
+* **HTTPS (443)**
+  * Used to host websites over a secure, encrypted connection using SSL/TLS.
+  * Recommended for production websites and web applications.
+*  **RDP (3389)**
+  * Used for remote desktop access to Windows Virtual Machines.
+  * Allows administrators to manage Windows VMs through the Remote Desktop Protocol (RDP).
 
