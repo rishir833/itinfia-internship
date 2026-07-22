@@ -111,3 +111,24 @@ The Security Type determines the level of security applied to a Virtual Machine 
 ### Why do we use it?
 
 The Security Type is used to protect Virtual Machines from security threats and unauthorized access. It helps secure the operating system, applications, and sensitive data by enabling different levels of protection based on workload requirements. Choosing the appropriate security type improves compliance, strengthens security, and reduces the risk of cyberattacks.
+
+
+## Image
+### What is it?
+
+An Image is a pre-configured operating system or software template used to create a Virtual Machine. Azure provides a wide range of images, including Windows Server, Ubuntu, Red Hat Enterprise Linux, Debian, and other operating systems. Some images also include pre-installed software such as SQL Server or Visual Studio. Selecting an image determines the operating system and initial configuration of the Virtual Machine.
+
+### Why do we use it?
+
+Images simplify and speed up VM deployment by providing ready-to-use operating systems and application environments. They eliminate the need for manual installation and configuration, ensuring consistency across deployments. Users can also create custom images to deploy identical virtual machines for specific workloads.
+
+## VM Architecture
+### What is it?
+
+VM Architecture specifies the processor architecture on which the Virtual Machine will run. Azure currently supports x64 (64-bit) and Arm64 architectures. The selected architecture must be compatible with the operating system image and the applications you intend to run. Most enterprise applications and operating systems are designed for x64, while Arm64 is optimized for specific workloads and energy efficiency.
+
+### Why do we use it?
+
+VM Architecture ensures compatibility between the hardware platform, operating system, and applications. Selecting the correct architecture improves performance, optimizes resource utilization, and ensures that software runs without compatibility issues. For most workloads, x64 is the recommended and widely supported architecture.
+
+
