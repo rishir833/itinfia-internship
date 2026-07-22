@@ -21,5 +21,13 @@ Azure supports multiple programming languages, frameworks, and operating systems
 # Azure VM
 How to create Azure VM and its reources
 
+<img width="1022" height="455" alt="image" src="https://github.com/user-attachments/assets/43da2a9b-cc67-438a-b287-985bef9051ac" />
 
-<img width="1140" height="468" alt="image" src="https://github.com/user-attachments/assets/f1d32ddc-f58a-4133-9364-e18dc42b6c5b" />
+## Azure Subscription
+### What is it?
+
+An Azure Subscription is a logical container that provides access to Microsoft Azure services. It serves as the billing, management, and security boundary for all Azure resources. Every resource created in Azure must belong to a subscription. Organizations can create multiple subscriptions to separate projects, departments, or environments such as Development, Testing, and Production.
+
+### Why do we use it?
+
+Subscriptions are used to manage billing, monitor resource usage, control user access through Azure RBAC, and apply governance policies. They also help organizations organize resources efficiently while maintaining security and cost control.
