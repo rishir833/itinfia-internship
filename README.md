@@ -132,3 +132,33 @@ VM Architecture specifies the processor architecture on which the Virtual Machin
 VM Architecture ensures compatibility between the hardware platform, operating system, and applications. Selecting the correct architecture improves performance, optimizes resource utilization, and ensures that software runs without compatibility issues. For most workloads, x64 is the recommended and widely supported architecture.
 
 
+## Size 
+<img width="1037" height="75" alt="image" src="https://github.com/user-attachments/assets/1dc0d5e7-9a64-46f4-a45b-6a82d705c4e6" />
+### What is it?
+
+The Size of a Virtual Machine determines the amount of computing resources allocated to it, including the number of Virtual CPUs (vCPUs), Memory (RAM), Storage Performance, and Network Bandwidth. Azure offers a wide range of VM sizes, each designed for different workloads such as development, web hosting, databases, high-performance computing, and AI applications. Choosing the correct VM size ensures that the application has sufficient resources while maintaining cost efficiency.
+
+### Why do we use it?
+
+VM Size is selected based on the performance requirements of the workload. It helps optimize resource utilization, improve application performance, and control infrastructure costs. Azure allows VM sizes to be changed later if workload requirements increase or decrease, providing flexibility and scalability.
+
+ ###Common Azure VM Size Series
+* B-Series (Burstable)
+  * Best for development, testing, and small web servers.
+  * Low-cost VMs that can temporarily burst CPU performance when needed.
+* D-Series (General Purpose)
+  * Balanced CPU and memory.
+  * Suitable for enterprise applications, web servers, and business workloads.
+* E-Series (Memory Optimized)
+  * Provides a higher memory-to-CPU ratio.
+  * Ideal for databases, in-memory applications, and analytics.
+* F-Series (Compute Optimized)
+  * Offers higher CPU performance with less memory.
+  * Best for batch processing, gaming servers, and compute-intensive applications.
+* L-Series (Storage Optimized)
+  * High disk throughput and storage capacity.
+  * Used for big data, NoSQL databases, and storage-intensive workloads.
+* N-Series (GPU Enabled)
+  * Equipped with NVIDIA GPUs.
+  * Suitable for AI, Machine Learning, deep learning, graphics rendering, and video processing.
+
