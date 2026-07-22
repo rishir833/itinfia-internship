@@ -134,6 +134,7 @@ VM Architecture ensures compatibility between the hardware platform, operating s
 
 ## Size 
 <img width="1037" height="75" alt="image" src="https://github.com/user-attachments/assets/1dc0d5e7-9a64-46f4-a45b-6a82d705c4e6" />
+
 ### What is it?
 
 The Size of a Virtual Machine determines the amount of computing resources allocated to it, including the number of Virtual CPUs (vCPUs), Memory (RAM), Storage Performance, and Network Bandwidth. Azure offers a wide range of VM sizes, each designed for different workloads such as development, web hosting, databases, high-performance computing, and AI applications. Choosing the correct VM size ensures that the application has sufficient resources while maintaining cost efficiency.
@@ -142,7 +143,7 @@ The Size of a Virtual Machine determines the amount of computing resources alloc
 
 VM Size is selected based on the performance requirements of the workload. It helps optimize resource utilization, improve application performance, and control infrastructure costs. Azure allows VM sizes to be changed later if workload requirements increase or decrease, providing flexibility and scalability.
 
- ###Common Azure VM Size Series
+ ### Common Azure VM Size Series
 * B-Series (Burstable)
   * Best for development, testing, and small web servers.
   * Low-cost VMs that can temporarily burst CPU performance when needed.
@@ -161,4 +162,62 @@ VM Size is selected based on the performance requirements of the workload. It he
 * N-Series (GPU Enabled)
   * Equipped with NVIDIA GPUs.
   * Suitable for AI, Machine Learning, deep learning, graphics rendering, and video processing.
+ 
+## Authentication Type
+<img width="577" height="68" alt="image" src="https://github.com/user-attachments/assets/6b564fe4-eaa7-49b2-b417-b20b6966f103" />
 
+#### What is it?
+
+The Authentication Type defines how users authenticate and securely connect to a Virtual Machine after deployment. Azure provides two authentication methods: SSH Public Key and Password. The selected method verifies the user's identity before allowing access to the VM. For Linux Virtual Machines, SSH Public Key is the recommended option because it offers stronger security than passwords.
+
+### Why do we use it?
+
+Authentication Type is used to secure access to the Virtual Machine and prevent unauthorized logins. It ensures that only authenticated users can access the VM while improving overall security and reducing the risk of unauthorized access.
+
+### Authentication Methods
+* SSH Public Key
+  * Uses a public and private key pair for secure authentication.
+  * More secure than passwords and recommended for Linux VMs.
+* Password
+  * Uses a username and password to access the VM.
+  * Simple to configure and suitable for testing or Windows VMs.
+ 
+ ## Username
+
+ <img width="1012" height="32" alt="image" src="https://github.com/user-attachments/assets/d7f293a7-8fea-4264-b9cc-19b00e231749" />
+
+### What is it?
+
+The Username is the administrator account created for the Virtual Machine during deployment. It is used to log in and manage the operating system after the VM is created. The username must be unique within the VM and follow Azure's naming rules. It works together with the selected authentication method, such as an SSH key or password, to provide secure access.
+
+### Why do we use it?
+
+The Username is used to identify the administrator who accesses the Virtual Machine. It provides a secure way to manage the VM, install software, configure settings, and perform administrative tasks. Choosing a meaningful username also helps maintain consistency and simplifies VM management.
+
+## SSH Key Type
+
+<img width="528" height="72" alt="image" src="https://github.com/user-attachments/assets/22ae42be-3fdc-474b-a365-ebbc8c9f7658" />
+
+### What is it?
+
+The SSH Key Type determines the encryption algorithm used to generate the SSH key pair for secure access to the Virtual Machine. Azure supports two SSH key formats: RSA and Ed25519. The selected key type is used during authentication when connecting to the VM using SSH. Both methods provide secure, passwordless access to Linux Virtual Machines.
+
+### Why do we use it?
+
+The SSH Key Type is used to establish secure communication between the user and the Virtual Machine. It enhances security by replacing passwords with cryptographic keys, reducing the risk of unauthorized access and brute-force attacks.
+
+### SSH Key Types
+* RSA SSH Format
+  * Widely supported and compatible with most SSH clients and systems.
+  * Recommended when broad compatibility is required.
+* Ed25519 SSH Format
+  * Uses a modern encryption algorithm with stronger security.
+  * Generates smaller keys and provides faster authentication.
+
+
+## Key Pair Name
+
+<img width="1016" height="35" alt="image" src="https://github.com/user-attachments/assets/b24425ac-358f-4988-8986-f74bca03070f" />
+
+
+The Key Pair Name is the name assigned to the SSH key pair that is used to authenticate and securely access the Virtual Machine. It helps identify and manage the SSH key within Azure. The key pair consists of a public key, which is stored on the VM, and a private key, which is downloaded and kept securely by the user. Using a meaningful key pair name makes it easier to identify the correct key when managing multiple Virtual Machines.
