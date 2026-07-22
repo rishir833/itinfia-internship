@@ -16,3 +16,10 @@ Azure supports multiple programming languages, frameworks, and operating systems
 - Disaster Recovery and Backup: Built-in backup and replication services help protect business-critical workloads.
 - Pay-as-you-go Pricing: Customers only pay for the resources they consume.
 - Automation: Supports infrastructure automation using Azure CLI, Azure PowerShell, ARM Templates, Bicep, and Terraform.
+
+
+# Azure VM
+How to create Azure VM and its reources
+
+
+<img width="1140" height="468" alt="image" src="https://github.com/user-attachments/assets/f1d32ddc-f58a-4133-9364-e18dc42b6c5b" />
