@@ -92,6 +92,17 @@ An Availability Zone is a physically separate data center within an Azure region
 
 Availability Zones are used to protect applications from data center failures and planned maintenance events. They improve application uptime by ensuring that if one zone becomes unavailable, resources deployed in other zones continue to operate. This helps organizations build highly available and fault-tolerant cloud solutions.
 
+### Types of Availability Zones
+* **Zone 1**
+  * Deploys the Virtual Machine in the first physically isolated data center within the selected Azure region.
+  * Used to host workloads independently or as part of a multi-zone deployment for high availability.
+* **Zone 2**
+  * Deploys the Virtual Machine in the second physically isolated data center.
+  * Commonly used to distribute applications across multiple zones, ensuring continuity if another zone fails.
+* **Zone 3**
+  * Deploys the Virtual Machine in the third physically isolated data center.
+  * Provides additional redundancy and is typically used with Zones 1 and 2 for mission-critical applications.
+
 ## Security Type
 ### What is it?
 
@@ -321,7 +332,9 @@ Public Inbound Ports are used to provide remote access and allow external users 
   * Common examples include SSH (Port 22) for Linux VMs and RDP (Port 3389) for Windows VMs. It provides controlled access while maintaining network security.
 
 ## Inbound Ports
-<img width="977" height="205" alt="image" src="https://github.com/user-attachments/assets/73526e92-139e-4c17-9f19-e08572a5c737" />
+
+<img width="1002" height="52" alt="image" src="https://github.com/user-attachments/assets/f137b753-9bcb-4c74-a4f7-27fa1be55d24" />
+
 
 ### What is it?
 
@@ -344,4 +357,44 @@ Selecting the appropriate inbound ports ensures that only the required services 
 *  **RDP (3389)**
    * Used for remote desktop access to Windows Virtual Machines.
    * Allows administrators to manage Windows VMs through the Remote Desktop Protocol (RDP).
+
+
+ ## Boot Diagnostics
+
+  <img width="927" height="140" alt="image" src="https://github.com/user-attachments/assets/4e5782e2-41b0-4406-8eb9-44df59fa2001" />
+
+### What is it?
+
+Boot Diagnostics is an Azure monitoring feature that captures boot logs and screenshots of a Virtual Machine during the startup process. It helps administrators diagnose boot failures, operating system errors, and startup issues. Azure allows you to store these diagnostic logs in either a managed storage account or a custom storage account, or you can disable the feature if it is not required.
+
+### Why do we use it?
+
+Boot Diagnostics is used to troubleshoot Virtual Machine startup problems when a VM fails to boot or becomes unresponsive. It provides valuable diagnostic information that helps administrators quickly identify and resolve issues, reducing downtime and improving VM availability.
+
+### Boot Diagnostics Options
+* Enable with Managed Storage Account (Recommended)
+  * Azure automatically creates and manages the storage account used for boot diagnostics.
+  * Simplifies configuration and is the recommended option for most deployments.
+* Enable with Custom Storage Account
+  * Allows you to store boot diagnostics data in an existing Azure Storage Account.
+  * Useful when you want more control over storage location, access, or compliance requirements.
+* Disable
+  * Turns off Boot Diagnostics and no boot logs or screenshots are collected.
+  * Suitable only when diagnostic information is not required.
+ 
+
+
+After That Just Do Review+Create 
+
+<img width="792" height="640" alt="image" src="https://github.com/user-attachments/assets/7cc32f6a-c18c-431e-a9fe-8df0998e4766" />
+
+<img width="732" height="537" alt="image" src="https://github.com/user-attachments/assets/a583e4bc-7671-4e99-8352-2c103ae77804" />
+<img width="1813" height="502" alt="image" src="https://github.com/user-attachments/assets/c591735a-c09c-42e0-b31c-4fb9e44a4320" />
+
+
+# VM is created
+
+
+
+
 
