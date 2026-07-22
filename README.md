@@ -93,20 +93,20 @@ Availability Zones are used to protect applications from data center failures an
 The Security Type determines the level of security applied to a Virtual Machine during deployment. Azure offers different security options to protect VMs from malware, unauthorized access, and boot-level attacks. The available options are:
 
 * Standard
- * Provides the default security features for a Virtual Machine.
- * Suitable for development, testing, and general-purpose workloads.
- * Does not include advanced security features like Secure Boot or virtual TPM.
+  * Provides the default security features for a Virtual Machine.
+  * Suitable for development, testing, and general-purpose workloads.
+  * Does not include advanced security features like Secure Boot or virtual TPM.
 * Trusted Launch
- * Provides enhanced security for Gen2 Virtual Machines.
- * Enables Secure Boot, which prevents unauthorized operating systems and bootloaders from loading during startup.
- * Includes a Virtual Trusted Platform Module (vTPM) to securely store encryption keys and credentials.
- * Protects against bootkits, rootkits, and firmware-level attacks.
- * Recommended for production environments requiring higher security.
+  * Provides enhanced security for Gen2 Virtual Machines.
+  * Enables Secure Boot, which prevents unauthorized operating systems and bootloaders from loading during startup.
+  * Includes a Virtual Trusted Platform Module (vTPM) to securely store encryption keys and credentials.
+  * Protects against bootkits, rootkits, and firmware-level attacks.
+  * Recommended for production environments requiring higher security.
 * Confidential Virtual Machines
- * Designed for highly sensitive and confidential workloads.
- * Uses hardware-based memory encryption to protect data while it is being processed.
- * Prevents cloud administrators and unauthorized users from accessing data stored in memory.
- * Commonly used in healthcare, banking, government, and financial sectors where data privacy is critical.
+  * Designed for highly sensitive and confidential workloads.
+  * Uses hardware-based memory encryption to protect data while it is being processed.
+  * Prevents cloud administrators and unauthorized users from accessing data stored in memory.
+  * Commonly used in healthcare, banking, government, and financial sectors where data privacy is critical.
 
 ### Why do we use it?
 
