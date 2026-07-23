@@ -80,6 +80,12 @@ Selecting the appropriate workflow type ensures the Logic App behaves according 
 * Autonomous Agents (Preview)
   * Uses AI agents that can independently perform tasks and make decisions based on triggers such as events, schedules, or API calls.
   * Designed for intelligent automation scenarios and advanced AI workflows.
+ 
+ 
+<img width="698" height="377" alt="image" src="https://github.com/user-attachments/assets/bda4d25a-e06b-4209-8cf1-890949740a9b" />
+
+<img width="1053" height="337" alt="image" src="https://github.com/user-attachments/assets/c462e648-c0ff-4b3c-9114-47b0380927b1" />
+
 
 ## Standard – Workflow Service Plan
 <img width="302" height="447" alt="image" src="https://github.com/user-attachments/assets/cda3f546-750e-4e09-90b1-fc0a5999abb9" />
@@ -92,6 +98,46 @@ The Workflow Service Plan is a single-tenant hosting option where Logic Apps run
 ### Why do we use it?
 
 It is used for applications requiring predictable performance, private networking, and higher scalability. Since resources are dedicated, it is suitable for enterprise workloads with consistent traffic.
+
+### Making One
+<img width="1132" height="575" alt="image" src="https://github.com/user-attachments/assets/44e9c8b2-bc01-4d16-b11c-994349f4fd46" />
+
+#### Windows Plan (App Service Plan)
+##### What is it?
+
+The Windows Plan (App Service Plan) defines the compute resources on which the Standard Logic App runs. It specifies the virtual machines, memory, CPU, and scaling capabilities available to the Logic App. Multiple Logic Apps can share the same App Service Plan, making resource utilization more efficient.
+
+Why do we use it?
+
+An App Service Plan provides dedicated compute resources, offering predictable performance and greater control over scaling. It is suitable for enterprise workloads that require consistent performance and private networking.
+
+Pricing Plan
+What is it?
+
+The Pricing Plan determines the performance tier and cost of the App Service Plan. It defines the available CPU, memory, storage, and scaling capabilities for the Logic App. Azure offers different pricing tiers to support development, testing, and production workloads.
+
+Why do we use it?
+
+The Pricing Plan allows users to choose the appropriate level of resources based on application requirements. Selecting the right plan helps balance performance, scalability, and cost while ensuring efficient resource utilization.
+
+Zone Redundancy
+What is it?
+
+Zone Redundancy distributes the App Service Plan across multiple Availability Zones within the same Azure region. This ensures that the Logic App continues running even if one Availability Zone becomes unavailable due to hardware failures or maintenance. It increases the reliability and resilience of the application.
+
+Why do we use it?
+
+Zone Redundancy is used to improve high availability and minimize downtime for critical applications. It protects workloads from single-zone failures and ensures business continuity.
+
+Zone Redundancy Options
+Enabled
+Deploys the App Service Plan across multiple Availability Zones.
+Provides higher availability and fault tolerance.
+Requires a minimum of two App Service Plan instances.
+Disabled
+Deploys the App Service Plan in a single Availability Zone.
+Suitable for development, testing, or non-critical workloads.
+Requires only one App Service Plan instance, making it more cost-effective.
 
 ## Standard – App Service Environment (ASE) V3
 <img width="336" height="478" alt="image" src="https://github.com/user-attachments/assets/37b0ba8f-2208-43ea-b365-a24a0d222ddb" />
