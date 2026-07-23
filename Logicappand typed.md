@@ -6,3 +6,68 @@ Azure Logic Apps is a fully managed, cloud-based integration service provided by
 Logic Apps support hundreds of built-in connectors for Microsoft services, third-party applications, databases, APIs, and enterprise systems such as Microsoft 365, SQL Server, SAP, Salesforce, and ServiceNow. A workflow is typically initiated by a trigger, followed by one or more actions that perform the required tasks automatically.
 
 Azure Logic Apps are widely used for business process automation, application integration, data synchronization, file processing, notifications, approval workflows, and enterprise system integration. They provide a scalable, reliable, and cost-effective solution for building automated workflows without managing underlying infrastructure.
+
+# Types of Hosting Plan
+
+## Consumption
+
+<img width="317" height="482" alt="image" src="https://github.com/user-attachments/assets/8b288101-96cc-4f42-b2e7-cc893f49764b" />
+
+### What is it?
+
+The Consumption plan is a fully managed, serverless hosting option where Azure automatically allocates and manages the required infrastructure. It uses a multi-tenant environment, meaning multiple customers share the same Azure infrastructure. Resources are allocated only when a workflow is triggered, making it simple to get started.
+
+### Why do we use it?
+
+It is ideal for event-driven workflows with unpredictable or low execution frequency. Since billing is based on the number of workflow executions and actions performed, it is the most cost-effective option for small and medium workloads.
+
+## Standard – Workflow Service Plan
+<img width="302" height="447" alt="image" src="https://github.com/user-attachments/assets/cda3f546-750e-4e09-90b1-fc0a5999abb9" />
+
+
+### What is it?
+
+The Workflow Service Plan is a single-tenant hosting option where Logic Apps run on dedicated resources. It supports built-in connectors, custom connectors, VNET integration, and multiple workflows within a single Logic App resource. It provides better performance and greater control than the Consumption plan.
+
+### Why do we use it?
+
+It is used for applications requiring predictable performance, private networking, and higher scalability. Since resources are dedicated, it is suitable for enterprise workloads with consistent traffic.
+
+## Standard – App Service Environment (ASE) V3
+<img width="336" height="478" alt="image" src="https://github.com/user-attachments/assets/37b0ba8f-2208-43ea-b365-a24a0d222ddb" />
+
+
+### What is it?
+
+App Service Environment (ASE) V3 hosts Logic Apps in a fully isolated and dedicated Azure environment. It provides complete network isolation and enhanced security while running within an Azure Virtual Network (VNet). This option is designed for large-scale enterprise applications.
+
+### Why do we use it?
+
+It is used when applications require maximum security, compliance, and network isolation. Organizations handling sensitive data often choose ASE V3 to meet strict regulatory and security requirements.
+
+## Standard – Hybrid
+<img width="311" height="416" alt="image" src="https://github.com/user-attachments/assets/1b8c3a73-d95a-4b3f-a187-e44f7e25422d" />
+
+### What is it?
+
+The Hybrid hosting option allows Logic Apps to run on customer-managed infrastructure, such as Kubernetes clusters, while still integrating with Azure services. It supports local processing and hybrid cloud scenarios where workloads are distributed between on-premises and Azure environments.
+
+### Why do we use it?
+
+It is used when organizations need to process data locally, reduce latency, or comply with data residency requirements while still benefiting from Azure Logic Apps capabilities.
+
+## Automation Project (Preview) – Managed
+<img width="312" height="475" alt="image" src="https://github.com/user-attachments/assets/d186efd9-5170-47cb-a70e-fe0ae3fa2865" />
+
+
+### What is it?
+
+The Managed Automation Project is a fully managed hosting option designed for automation-focused workloads. Azure manages the infrastructure while providing automatic scaling, workflow execution, and simplified deployment. This option is currently available as a preview feature.
+
+### Why do we use it?
+
+It is used to automate repetitive business processes without managing infrastructure. It simplifies deployment, reduces operational overhead, and automatically scales based on workload demand.
+
+
+
+
