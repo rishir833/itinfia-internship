@@ -87,6 +87,11 @@ Selecting the appropriate workflow type ensures the Logic App behaves according 
 <img width="1053" height="337" alt="image" src="https://github.com/user-attachments/assets/c462e648-c0ff-4b3c-9114-47b0380927b1" />
 
 
+
+
+
+
+## STANDARD
 ## Standard – Workflow Service Plan
 <img width="302" height="447" alt="image" src="https://github.com/user-attachments/assets/cda3f546-750e-4e09-90b1-fc0a5999abb9" />
 
@@ -100,6 +105,7 @@ The Workflow Service Plan is a single-tenant hosting option where Logic Apps run
 It is used for applications requiring predictable performance, private networking, and higher scalability. Since resources are dedicated, it is suitable for enterprise workloads with consistent traffic.
 
 ### Making One
+#### Basics
 <img width="1132" height="575" alt="image" src="https://github.com/user-attachments/assets/44e9c8b2-bc01-4d16-b11c-994349f4fd46" />
 
 #### Windows Plan (App Service Plan)
@@ -107,37 +113,70 @@ It is used for applications requiring predictable performance, private networkin
 
 The Windows Plan (App Service Plan) defines the compute resources on which the Standard Logic App runs. It specifies the virtual machines, memory, CPU, and scaling capabilities available to the Logic App. Multiple Logic Apps can share the same App Service Plan, making resource utilization more efficient.
 
-Why do we use it?
+##### Why do we use it?
 
 An App Service Plan provides dedicated compute resources, offering predictable performance and greater control over scaling. It is suitable for enterprise workloads that require consistent performance and private networking.
 
-Pricing Plan
-What is it?
+#### Pricing Plan
+##### What is it?
 
 The Pricing Plan determines the performance tier and cost of the App Service Plan. It defines the available CPU, memory, storage, and scaling capabilities for the Logic App. Azure offers different pricing tiers to support development, testing, and production workloads.
 
-Why do we use it?
+##### Why do we use it?
 
 The Pricing Plan allows users to choose the appropriate level of resources based on application requirements. Selecting the right plan helps balance performance, scalability, and cost while ensuring efficient resource utilization.
 
-Zone Redundancy
-What is it?
+#### Zone Redundancy
+##### What is it?
 
 Zone Redundancy distributes the App Service Plan across multiple Availability Zones within the same Azure region. This ensures that the Logic App continues running even if one Availability Zone becomes unavailable due to hardware failures or maintenance. It increases the reliability and resilience of the application.
 
-Why do we use it?
+##### Why do we use it?
 
 Zone Redundancy is used to improve high availability and minimize downtime for critical applications. It protects workloads from single-zone failures and ensures business continuity.
 
-Zone Redundancy Options
-Enabled
-Deploys the App Service Plan across multiple Availability Zones.
-Provides higher availability and fault tolerance.
-Requires a minimum of two App Service Plan instances.
-Disabled
-Deploys the App Service Plan in a single Availability Zone.
-Suitable for development, testing, or non-critical workloads.
-Requires only one App Service Plan instance, making it more cost-effective.
+**Zone Redundancy Options**
+* Enabled
+  * Deploys the App Service Plan across multiple Availability Zones.
+  * Provides higher availability and fault tolerance.
+  * Requires a minimum of two App Service Plan instances.
+* Disabled
+  * Deploys the App Service Plan in a single Availability Zone.
+  * Suitable for development, testing, or non-critical workloads.
+  * Requires only one App Service Plan instance, making it more cost-effective.
+
+#### Networking
+<img width="685" height="125" alt="image" src="https://github.com/user-attachments/assets/b076f763-1254-456a-8b29-3344c184035c" />
+
+##### Enable Public Access
+
+Enable Public Access controls whether the Logic App can be accessed through the public internet. When enabled, external users and applications can invoke the Logic App using its public endpoint. When disabled, access is restricted to private networking.
+It is used to control external access to the Logic App. Enabling it allows public connectivity, while disabling it improves security by preventing internet access.
+
+##### Enable Virtual Network Integration
+
+Enable Virtual Network Integration allows the Logic App to securely connect to resources inside an Azure Virtual Network (VNet). This enables communication with private Azure resources and on-premises systems without exposing them to the public internet.
+It is used to securely access private resources and improve network security. It is recommended for enterprise applications that require private connectivity and secure communication.
+
+
+#### Monitoring
+<img width="957" height="252" alt="image" src="https://github.com/user-attachments/assets/ec1783ab-d263-47bd-a1e6-86714a69adca" />
+
+##### Enable Application Insights
+
+Application Insights is an Azure monitoring service that collects telemetry data from the Logic App, including workflow executions, performance metrics, failures, and exceptions. It provides real-time insights into the health and behavior of the application.
+It is used to monitor the performance and availability of Logic Apps, diagnose failures, and troubleshoot issues quickly. It also helps improve application reliability through detailed analytics and reporting.
+
+##### Application Insights
+
+An Application Insights resource is where the monitoring and telemetry data generated by the Logic App is stored. It collects logs, metrics, requests, dependencies, and exception details, allowing administrators to analyze application performance over time.
+It is used to centralize monitoring data for the Logic App, making it easier to track workflow executions, identify bottlenecks, and generate reports for performance analysis and troubleshooting.
+
+<img width="633" height="427" alt="image" src="https://github.com/user-attachments/assets/29bf1a1e-2540-4b67-8728-e896008aebbd" />
+<img width="752" height="500" alt="image" src="https://github.com/user-attachments/assets/391f9583-9c31-4c91-b4ad-4db63299046d" />
+<img width="717" height="251" alt="image" src="https://github.com/user-attachments/assets/0c503de7-abe8-426c-8d30-7f6fdb277d99" />
+<img width="1053" height="337" alt="image" src="https://github.com/user-attachments/assets/c462e648-c0ff-4b3c-9114-47b0380927b1" />
+
 
 ## Standard – App Service Environment (ASE) V3
 <img width="336" height="478" alt="image" src="https://github.com/user-attachments/assets/37b0ba8f-2208-43ea-b365-a24a0d222ddb" />
@@ -151,6 +190,8 @@ App Service Environment (ASE) V3 hosts Logic Apps in a fully isolated and dedica
 
 It is used when applications require maximum security, compliance, and network isolation. Organizations handling sensitive data often choose ASE V3 to meet strict regulatory and security requirements.
 
+
+
 ## Standard – Hybrid
 <img width="311" height="416" alt="image" src="https://github.com/user-attachments/assets/1b8c3a73-d95a-4b3f-a187-e44f7e25422d" />
 
@@ -161,6 +202,82 @@ The Hybrid hosting option allows Logic Apps to run on customer-managed infrastru
 ### Why do we use it?
 
 It is used when organizations need to process data locally, reduce latency, or comply with data residency requirements while still benefiting from Azure Logic Apps capabilities.
+
+## Making Standard Logic Apps
+### Making One
+#### Basics
+<img width="1132" height="575" alt="image" src="https://github.com/user-attachments/assets/44e9c8b2-bc01-4d16-b11c-994349f4fd46" />
+
+#### Windows Plan (App Service Plan)
+##### What is it?
+
+The Windows Plan (App Service Plan) defines the compute resources on which the Standard Logic App runs. It specifies the virtual machines, memory, CPU, and scaling capabilities available to the Logic App. Multiple Logic Apps can share the same App Service Plan, making resource utilization more efficient.
+
+##### Why do we use it?
+
+An App Service Plan provides dedicated compute resources, offering predictable performance and greater control over scaling. It is suitable for enterprise workloads that require consistent performance and private networking.
+
+#### Pricing Plan
+##### What is it?
+
+The Pricing Plan determines the performance tier and cost of the App Service Plan. It defines the available CPU, memory, storage, and scaling capabilities for the Logic App. Azure offers different pricing tiers to support development, testing, and production workloads.
+
+##### Why do we use it?
+
+The Pricing Plan allows users to choose the appropriate level of resources based on application requirements. Selecting the right plan helps balance performance, scalability, and cost while ensuring efficient resource utilization.
+
+#### Zone Redundancy
+##### What is it?
+
+Zone Redundancy distributes the App Service Plan across multiple Availability Zones within the same Azure region. This ensures that the Logic App continues running even if one Availability Zone becomes unavailable due to hardware failures or maintenance. It increases the reliability and resilience of the application.
+
+##### Why do we use it?
+
+Zone Redundancy is used to improve high availability and minimize downtime for critical applications. It protects workloads from single-zone failures and ensures business continuity.
+
+**Zone Redundancy Options**
+* Enabled
+  * Deploys the App Service Plan across multiple Availability Zones.
+  * Provides higher availability and fault tolerance.
+  * Requires a minimum of two App Service Plan instances.
+* Disabled
+  * Deploys the App Service Plan in a single Availability Zone.
+  * Suitable for development, testing, or non-critical workloads.
+  * Requires only one App Service Plan instance, making it more cost-effective.
+
+#### Networking
+<img width="685" height="125" alt="image" src="https://github.com/user-attachments/assets/b076f763-1254-456a-8b29-3344c184035c" />
+
+##### Enable Public Access
+
+Enable Public Access controls whether the Logic App can be accessed through the public internet. When enabled, external users and applications can invoke the Logic App using its public endpoint. When disabled, access is restricted to private networking.
+It is used to control external access to the Logic App. Enabling it allows public connectivity, while disabling it improves security by preventing internet access.
+
+##### Enable Virtual Network Integration
+
+Enable Virtual Network Integration allows the Logic App to securely connect to resources inside an Azure Virtual Network (VNet). This enables communication with private Azure resources and on-premises systems without exposing them to the public internet.
+It is used to securely access private resources and improve network security. It is recommended for enterprise applications that require private connectivity and secure communication.
+
+
+#### Monitoring
+<img width="957" height="252" alt="image" src="https://github.com/user-attachments/assets/ec1783ab-d263-47bd-a1e6-86714a69adca" />
+
+##### Enable Application Insights
+
+Application Insights is an Azure monitoring service that collects telemetry data from the Logic App, including workflow executions, performance metrics, failures, and exceptions. It provides real-time insights into the health and behavior of the application.
+It is used to monitor the performance and availability of Logic Apps, diagnose failures, and troubleshoot issues quickly. It also helps improve application reliability through detailed analytics and reporting.
+
+##### Application Insights
+
+An Application Insights resource is where the monitoring and telemetry data generated by the Logic App is stored. It collects logs, metrics, requests, dependencies, and exception details, allowing administrators to analyze application performance over time.
+It is used to centralize monitoring data for the Logic App, making it easier to track workflow executions, identify bottlenecks, and generate reports for performance analysis and troubleshooting.
+
+<img width="633" height="427" alt="image" src="https://github.com/user-attachments/assets/29bf1a1e-2540-4b67-8728-e896008aebbd" />
+<img width="752" height="500" alt="image" src="https://github.com/user-attachments/assets/391f9583-9c31-4c91-b4ad-4db63299046d" />
+<img width="717" height="251" alt="image" src="https://github.com/user-attachments/assets/0c503de7-abe8-426c-8d30-7f6fdb277d99" />
+<img width="1053" height="337" alt="image" src="https://github.com/user-attachments/assets/c462e648-c0ff-4b3c-9114-47b0380927b1" />
+
+
 
 ## Automation Project (Preview) – Managed
 <img width="312" height="475" alt="image" src="https://github.com/user-attachments/assets/d186efd9-5170-47cb-a70e-fe0ae3fa2865" />
@@ -173,6 +290,17 @@ The Managed Automation Project is a fully managed hosting option designed for au
 ### Why do we use it?
 
 It is used to automate repetitive business processes without managing infrastructure. It simplifies deployment, reduces operational overhead, and automatically scales based on workload demand.
+
+
+## Making One
+
+<img width="1131" height="437" alt="image" src="https://github.com/user-attachments/assets/c01105f4-4627-4c39-be0a-9c6dae7b78e3" />
+
+
+<img width="836" height="237" alt="image" src="https://github.com/user-attachments/assets/704d7d0c-b157-4819-b033-f37d54979504" />
+
+
+<img width="1305" height="357" alt="image" src="https://github.com/user-attachments/assets/c8f2de9b-bd39-450a-a3c3-8f79c841b2e9" />
 
 
 
